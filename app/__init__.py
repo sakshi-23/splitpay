@@ -22,6 +22,10 @@ def transactions():
     return render_template('transactions.html')
 
 
+@app.route("/shopping")
+def shopping():
+    return render_template('shopping.html')
+
 
    
 @app.errorhandler(404)
