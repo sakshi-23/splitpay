@@ -39,7 +39,7 @@ function checkLoginState() {
 
 
 function statusChangeCallback(response){
- return;
+
     if(response.status!="connected"){
         return;
     }
