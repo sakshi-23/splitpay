@@ -51,6 +51,7 @@ function statusChangeCallback(response){
         function (response) {
           if (response && !response.error) {
             console.log(response.name)
+            $(".profile-name").html(response.name);
           }
         }
     );
@@ -64,5 +65,14 @@ function statusChangeCallback(response){
       }
     }
     );
+
+    FB.api(
+    "/"+response.authResponse.userID+"/picture",
+    function (response) {
+      if (response && !response.error) {
+        $(".profileImg").attr("src",response.data.url);
+      }
+    }
+);
 
 }
